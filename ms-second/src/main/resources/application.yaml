@@ -1,0 +1,23 @@
+server:
+  port: 7352
+
+spring:
+  application:
+    name: ms-second
+  datasource:
+    url: jdbc:postgresql://localhost:5433/msseconddb
+    username: msseconddb
+    password: msseconddb
+  jpa:
+    hibernate:
+      ddl-auto: none
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: ms-second
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
