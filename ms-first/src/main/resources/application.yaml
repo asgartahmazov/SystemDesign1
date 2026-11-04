@@ -1,3 +1,6 @@
+server:
+  port: 7352
+
 spring:
   application:
     name: ms-first
