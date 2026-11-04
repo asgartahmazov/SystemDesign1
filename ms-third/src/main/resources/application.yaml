@@ -1,0 +1,23 @@
+server:
+  port: 7353
+
+spring:
+  application:
+    name: ms-third
+  datasource:
+    url: jdbc:postgresql://localhost:5434/msthirddb
+    username: msthirddb
+    password: msthirddb
+  jpa:
+    hibernate:
+      ddl-auto: none
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: ms-third
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
